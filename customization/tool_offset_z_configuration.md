@@ -48,14 +48,14 @@ Then home Z:
 G28 Z
 ```
 
-Now, put your piece of paper on the deck. Jog down until the nozzle JUST touches it and drags it a bit. Check Z - it should say something like -1.2. Now, you want to enter that (as a positive value) as the “offset” for tool 0. 
+Now, put your piece of paper on the deck. Jog down until the nozzle JUST touches it and drags it a bit. Check Z - it should say something like -1.2. Now, you want to enter that (as a positive value) as the “offset” for tool 0. (where? specify where this next line goes. also specify what to do if the value is positive)
 
 ```
 G10 L1 P0 Z1.2 ; set tool offset for tool 0
 ```
 
 You need to insert this manually in your config-override file the first time, save that file, then reboot. Like this:
-
+(please speficy where the values come from. why is z6.28 in this example?)
 ```
 ; Probed tool offsets
 G10 P0 Z6.28
@@ -63,7 +63,7 @@ G10 L2 P1 X0.00 Y0.00 Z0.00
 G10 L2 P2 X0.00 Y0.00 Z0.00
 ```
 
-The reason is that RRF will only save the tool offset if 1) it's set by probing (which we aren't doing) or 2) it was originally read from the config-override.g file. So we have to put it in there manually and restart the duet. THEN we can make subsequent change permanent with:
+The reason is that RRF will only save the tool offset if 1) it's set by probing (which we aren't doing) or 2) it was originally read from the config-override.g file. So we have to put it in there manually and restart the duet. THEN we can make subsequent change permanent with: (in the console?)
 
 ```
 M500
@@ -76,4 +76,4 @@ G10 L1 P0 Z0 ; set tool offset to 0
 G28 Z
 ```
 
-THEN jog the nozzle to paper, and set your tool offset. This may seem complicated if you’re not used to manual gcode entry, but after a couple of tries you’ll find it MUCH simpler than adjusting Z offset in G31. 
+THEN jog the nozzle to paper, and set your tool offset. This may seem complicated if you’re not used to manual gcode entry, but after a couple of tries you’ll find it MUCH simpler than adjusting Z offset in G31. (do you have to remove the old g-31 lines? none of this is very clear, please include screen shots for the steps or find a more clear way of explaining how this is done, be specific when it is supposed to go into the console, or which config file, be consistent with each step)
