@@ -13,3 +13,6 @@ M106 P1 T45 H1
 ```
 
 It is [recommended](https://duet3d.dozuki.com/Wiki/Connecting_and_configuring_fans#Section_Thermostatically_controlled_fans) to always use FAN1 for heatbreak fans as this connector is on at boot and is only turned off when the firmware detects it's safe to do so.  In practice your fan will turn on briefly when the machine starts up, then go silent if the hotend is cool.
+
+
+<this line of code causes heater faults even if you autotune after it is enabled>
